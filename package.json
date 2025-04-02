@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JAMESBRADLEY99/on-record-api#readme",
   "dependencies": {
+    "express": "^5.1.0",
     "jest": "^29.7.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2"
