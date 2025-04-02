@@ -1,0 +1,23 @@
+{
+  "name": "on-record-api",
+  "version": "1.0.0",
+  "description": "Currently under construction, this will be the repository for the back end of OnRecord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAMESBRADLEY99/on-record-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAMESBRADLEY99/on-record-api/issues"
+  },
+  "homepage": "https://github.com/JAMESBRADLEY99/on-record-api#readme",
+  "dependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
