@@ -4,7 +4,7 @@
   "description": "Currently under construction, this will be the repository for the back end of OnRecord",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node index.js"
   },
   "repository": {
