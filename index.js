@@ -1,7 +1,14 @@
-console.log("Hello, world!");
+const express = require('express');
 
-function sum(x, y) {
-    return x+y;
-}
+const app = express();
 
-module.exports = sum;
+app.get('/', (req, res) => {
+    res.send("I'm here :)");
+  });
+
+
+const port = 3000;
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
