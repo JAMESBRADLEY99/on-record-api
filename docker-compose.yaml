@@ -1,6 +1,5 @@
 services:
   on-record-api:
-    image: node-app
     build:
       context: .
       dockerfile: Dockerfile
