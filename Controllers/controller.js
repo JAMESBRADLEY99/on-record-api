@@ -1,0 +1,3 @@
+exports.searchAlbum = (req, res) => {
+    
+}

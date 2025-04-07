@@ -6,9 +6,7 @@ app.get('/', (req, res) => {
     res.send("I'm here :)");
   });
 
+app.get('/album:query')
 
-const port = 3000;
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-  });
+module.exports = app;
