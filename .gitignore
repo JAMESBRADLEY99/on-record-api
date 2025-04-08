@@ -7,3 +7,6 @@ package-lock.json
 ### coverage ###
 coverage/
 
+### Spotify tokens ###
+Spotify/tokens.json
+
