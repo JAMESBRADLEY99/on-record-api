@@ -1,4 +1,4 @@
-const getAccessToken = require("./spotify.js").getAccessToken;
+const {getAccessToken, SpotifyToken} = require("./spotify.js");
 
 describe("getAccessToken", () => {
     test("should return an access token", () => {
@@ -7,4 +7,6 @@ describe("getAccessToken", () => {
             expect(token).toBeDefined();
         })
     });
-});
+
+    
+})
