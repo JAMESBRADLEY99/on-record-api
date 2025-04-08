@@ -1,3 +1,1 @@
-exports.searchAlbum = (req, res) => {
-    
-}
+exports.searchAlbum = (req, res) => {};
