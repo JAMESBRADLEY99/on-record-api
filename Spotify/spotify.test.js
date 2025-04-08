@@ -14,6 +14,5 @@ describe("searchAlbums", () => {
     const handler = new SpotifyHandler();
     await handler.getAccessToken();
     const response = await handler.searchAlbums("Holy Fire");
-    console.log(response);
   });
 });
