@@ -1,4 +1,5 @@
 const express = require("express");
+const { searchAlbum } = require("./Controllers/controller");
 
 const app = express();
 
@@ -6,8 +7,6 @@ app.get("/", (req, res) => {
   res.send("I'm here :)");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+app.get("/searchAlbums", searchAlbum);
 
 module.exports = app;
