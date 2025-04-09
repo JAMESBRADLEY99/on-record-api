@@ -12,7 +12,7 @@ describe("getAccessToken", () => {
 describe("searchAlbums", () => {
   test("should search for albums", async () => {
     const handler = new SpotifyHandler();
-    await handler.getAccessToken();
     const response = await handler.searchAlbums("Holy Fire");
+    expect(response[0].name).toBe("Holy Fire");
   });
 });
