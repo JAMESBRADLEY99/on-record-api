@@ -1,0 +1,12 @@
+### Node Modules ###
+node_modules/
+
+### package-lock.json ###
+package-lock.json
+
+### coverage ###
+coverage/
+
+### Spotify tokens ###
+src/Spotify/tokens.json
+
