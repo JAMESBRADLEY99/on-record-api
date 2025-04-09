@@ -36,12 +36,18 @@ class SpotifyHandler {
       },
     });
     const data = await response.json();
-    const items = data.albums.items;
-    const albums = items.filter((item) => item.album_type === "album");
-    return albums.map((album) => ({
-      name: album.name,
-      artist: album.artists[0].name,
-    }));
+    if ("albums" in data) {
+      const items = data.albums.items;
+      const albums = items.filter((item) => item.album_type === "album");
+      return albums.map((album) => ({
+        name: album.name,
+        artist: album.artists[0].name,
+      }));
+    }
+    if ("error" in data && data.error.status === 400) {
+      await this.getAccessToken();
+      return this.searchAlbums(searchText);
+    }
   }
 }
 

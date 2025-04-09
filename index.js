@@ -7,6 +7,6 @@ app.get("/", (req, res) => {
   res.send("I'm here :)");
 });
 
-app.get("/searchAlbums", searchAlbum);
+app.get("/searchAlbums/:searchText", searchAlbum);
 
 module.exports = app;
