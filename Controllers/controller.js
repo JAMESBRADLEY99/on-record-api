@@ -1,16 +1,14 @@
 const { SpotifyHandler } = require("../Spotify/spotify");
 
-const spotiifyHandler = new SpotifyHandler();
+const spotifyHandler = new SpotifyHandler();
 
 exports.searchAlbum = (req, res) => {
-  const searchText = req.query.searchText;
-  spotiifyHandler
-    .getAccessToken()
-    .then(() => {
-      return spotiifyHandler.searchAlbums(searchText);
-    })
+  const searchText = req.params.searchText;
+  spotifyHandler
+    .searchAlbums(searchText)
     .then((albums) => {
-      res.json(albums);
+      console.log(albums);
+      res.status(200).send(albums);
     })
     .catch((error) => {
       console.error(error);
