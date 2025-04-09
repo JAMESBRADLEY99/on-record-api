@@ -8,5 +8,5 @@ package-lock.json
 coverage/
 
 ### Spotify tokens ###
-# src/Spotify/tokens.json
+src/Spotify/tokens.json
 
