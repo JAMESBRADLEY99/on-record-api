@@ -3,7 +3,3 @@ node_modules/
 
 ### coverage ###
 coverage/
-
-### Spotify tokens ###
-src/Spotify/tokens.json
-
