@@ -7,7 +7,7 @@ class SpotifyHandler {
     const params = new URLSearchParams();
     params.append("grant_type", "client_credentials");
     params.append("client_id", process.env.SPOTIFY_CLIENT_ID);
-    params.append("client_secret", process.env.SPOTIFY_CLIENT_SECRET_ID);
+    params.append("client_secret", process.env.SPOTIFY_CLIENT_SECRET);
     
     console.log("fetching token");
     const response = await fetch("https://accounts.spotify.com/api/token", {
