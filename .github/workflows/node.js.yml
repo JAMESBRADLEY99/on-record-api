@@ -35,4 +35,4 @@ jobs:
       run: npm test
       env: 
         SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-        SPOTIFY_SECRET_ID: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
