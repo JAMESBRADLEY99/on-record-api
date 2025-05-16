@@ -1,5 +1,3 @@
-const tokens = require("./tokens.json");
-
 class SpotifyHandler {
   constructor() {
     this.access_token = "";
@@ -8,11 +6,10 @@ class SpotifyHandler {
   async getAccessToken() {
     const params = new URLSearchParams();
     params.append("grant_type", "client_credentials");
-    params.append("client_id", tokens.client_id);
-    params.append("client_secret", tokens.client_secret);
-
+    params.append("client_id", process.env.SPOTIFY_CLIENT_ID);
+    params.append("client_secret", process.env.SPOTIFY_CLIENT_SECRET_ID);
+    
     console.log("fetching token");
-
     const response = await fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
       headers: {
