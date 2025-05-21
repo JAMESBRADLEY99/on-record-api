@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 class SpotifyHandler {
   constructor() {
     this.access_token = "";
@@ -38,7 +40,7 @@ class SpotifyHandler {
 
     if ("albums" in data) {
       const items = data.albums.items;
-      const albums = items.filter((item) => item.album_type === "album");
+      const albums = items.filter((item) => item.album_type === "album");      
       return albums.map((album) => ({
         name: album.name,
         artist: album.artists[0].name,
