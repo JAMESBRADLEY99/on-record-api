@@ -15,4 +15,9 @@ describe("searchAlbums", () => {
     const response = await handler.searchAlbums("Holy Fire");
     expect(response[0].name).toBe("Holy Fire");
   });
+  test("response should be less than 6", async () => {
+    const handler = new SpotifyHandler();
+    const response = await handler.searchAlbums("Radiohead");
+    expect(response.length).toBeLessThan(6);
+  })
 });
