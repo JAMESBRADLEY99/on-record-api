@@ -40,7 +40,8 @@ class SpotifyHandler {
 
     if ("albums" in data) {
       const items = data.albums.items;
-      const albums = items.filter((item) => item.album_type === "album");      
+      var albums = items.filter((item) => item.album_type === "album");
+      albums = albums.slice(0,5)
       return albums.map((album) => ({
         name: album.name,
         artist: album.artists[0].name,
