@@ -68,8 +68,21 @@ class SpotifyHandler {
     const data = await response.json();
     console.log(data)
     if ("id" in data) {
-      console.log({name: data.name})
-      return {name: data.name}
+      const track_listing = data.tracks.items.map((track) => {
+        return {
+          name: track.name,
+        }
+      })
+
+      const payload = {
+        name: data.name,
+        artist: data.artists[0].name,
+        album_art: data.images[0].url,
+        track_length: data.tracks.total,
+        track_listing: track_listing,
+      }
+
+      return payload;
     };
 
     if ("error" in data && data.error.status === 400 && error_count === 0) {

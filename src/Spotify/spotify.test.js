@@ -30,5 +30,8 @@ describe("getAlbum", () => {
     const handler = new SpotifyHandler();
     const response = await handler.getAlbum("6SBkXTPlJ3oEaFwRm5o2lD")
     expect(response.name).toBe("Holy Fire")
+    expect(response.artist).toBe("Foals");
+    expect(response.album_art).toBeDefined();
+    expect(response.track_length).toEqual(response.track_listing.length);
   })
 })
