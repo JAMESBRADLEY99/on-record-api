@@ -45,6 +45,7 @@ class SpotifyHandler {
       return albums.map((album) => ({
         name: album.name,
         artist: album.artists[0].name,
+        album_id: album.id,
       }));
     }
 
