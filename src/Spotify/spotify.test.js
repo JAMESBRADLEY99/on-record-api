@@ -13,7 +13,10 @@ describe("searchAlbums", () => {
   test("should search for albums", async () => {
     const handler = new SpotifyHandler();
     const response = await handler.searchAlbums("Holy Fire");
-    expect(response[0].name).toBe("Holy Fire");
+    const first_response = response[0]
+    expect(first_response.name).toBe("Holy Fire");
+    expect(first_response.artist).toBe("Foals");
+    expect(first_response.album_id).toBeDefined();
   });
   test("response should be less than 6", async () => {
     const handler = new SpotifyHandler();
