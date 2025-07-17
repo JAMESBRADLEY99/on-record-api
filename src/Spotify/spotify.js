@@ -54,6 +54,29 @@ class SpotifyHandler {
       return this.searchAlbums(searchText);
     }
   }
+
+  async getAlbum(albumID, error_count=0) {
+    const url = `https://api.spotify.com/v1/albums/${albumID}`
+    console.log(url)
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${this.access_token}`,
+      },
+    });
+
+    const data = await response.json();
+    console.log(data)
+    if ("id" in data) {
+      console.log({name: data.name})
+      return {name: data.name}
+    };
+
+    if ("error" in data && data.error.status === 400 && error_count === 0) {
+      await this.getAccessToken();
+      return this.getAlbum(albumID, error_count + 1);
+    };
+  }
 }
 
 module.exports = {

@@ -15,3 +15,17 @@ exports.searchAlbum = (req, res) => {
       res.status(500).json({ error: "Internal Server Error" });
     });
 };
+
+exports.fetchAlbumDetails = (req, res) => {
+  const albumID = req.params.albumID
+  spotifyHandler
+    .getAlbum(albumID)
+    .then((album) => {
+      console.log(album);
+      res.status(200).send(album);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json( {error: "Internal Server Error"});
+    });
+};

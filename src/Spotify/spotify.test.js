@@ -24,3 +24,11 @@ describe("searchAlbums", () => {
     expect(response.length).toBeLessThan(6);
   })
 });
+
+describe("getAlbum", () => {
+  test("should get album", async () => {
+    const handler = new SpotifyHandler();
+    const response = await handler.getAlbum("6SBkXTPlJ3oEaFwRm5o2lD")
+    expect(response.name).toBe("Holy Fire")
+  })
+})
