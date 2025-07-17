@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require('cors');
-const { searchAlbum } = require("./Controllers/controller");
+const { searchAlbum, fetchAlbumDetails } = require("./Controllers/controller");
 
 const app = express();
 
@@ -11,5 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/searchAlbums/:searchText", searchAlbum);
+
+app.get("/album/:albumID", fetchAlbumDetails)
 
 module.exports = app;
