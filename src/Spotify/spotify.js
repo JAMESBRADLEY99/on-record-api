@@ -24,7 +24,7 @@ class SpotifyHandler {
     this.access_token = data.access_token;
   }
 
-  async searchAlbums(searchText) {
+  async searchAlbums(searchText, error_count=0) {
     const baseUrl = "https://api.spotify.com/v1/search";
     const params = new URLSearchParams({ q: searchText, type: "album" });
     const url = `${baseUrl}?${params}`;
@@ -49,9 +49,9 @@ class SpotifyHandler {
       }));
     }
 
-    if ("error" in data && data.error.status === 400) {
+    if ("error" in data && error_count === 0) {
       await this.getAccessToken();
-      return this.searchAlbums(searchText);
+      return this.searchAlbums(searchText, error_count + 1);
     }
   }
 
@@ -85,7 +85,7 @@ class SpotifyHandler {
       return payload;
     };
 
-    if ("error" in data && data.error.status === 400 && error_count === 0) {
+    if ("error" in data && error_count === 0) {
       await this.getAccessToken();
       return this.getAlbum(albumID, error_count + 1);
     };
