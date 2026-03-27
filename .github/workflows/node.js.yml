@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  node tests:
+  node-tests:
 
     runs-on: ubuntu-latest
 
