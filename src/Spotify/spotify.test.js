@@ -14,7 +14,7 @@ describe("searchAlbums", () => {
     const handler = new SpotifyHandler();
     const response = await handler.searchAlbums("Holy Fire Foals");
     const first_response = response[0]
-    expect(first_response.name).toBe("Holy yao Fire");
+    expect(first_response.name).toBe("Holy Fire");
     expect(first_response.artist).toBe("Foals");
     expect(first_response.album_id).toBeDefined();
   });
