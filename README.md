@@ -41,5 +41,4 @@ To set up this Node.js API project (which appears to be an Express.js backend fo
 5. **Additional notes**:
    - The project uses Express.js for the server, with CORS enabled.
    - If you encounter issues (e.g., Spotify API errors), ensure your credentials are correct and your Spotify app is configured properly (e.g., redirect URIs if needed, though this code seems to use client credentials flow).
-   - No database is visible in the code, so it might be a stateless API relying on Spotify's API.
    - Check the [Trello board](https://trello.com/b/9bs0gD9A/on-record) mentioned in the README for project status or tasks.
